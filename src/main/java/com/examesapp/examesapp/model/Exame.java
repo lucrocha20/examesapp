@@ -1,4 +1,4 @@
-package com.examesapp.examesapp.models;
+package com.examesapp.examesapp.model;
 
 public class Exame {
 	private int id;
