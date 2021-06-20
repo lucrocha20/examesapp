@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exames App</title>
+</head>
+<body>
+	<h2><a th:href="@{'exameadd'}">Novo Exame</a></h2>
+ 	<table>
+    	<thead>
+        	<tr>
+            	<td>ID</td>
+            	<td>NOME</td>
+            	<td>PACIENTE</td>
+            	<td>DATA</td>
+            	<td>RESULTADO</td>
+            	<td></td>
+            	<td></td>
+            	<td></td>
+        	</tr>
+    	</thead>
+    	<tbody>
+        	<tr th:each="exame: ${exames}">
+            	<td th:text="${exame.id}"></td>
+            	<td th:text="${exame.nome}"></td>
+            	<td th:text="${exame.paciente}"></td>
+            	<td th:text="${exame.data}"></td>
+            	<td th:text="${exame.resultado}"></td>
+            	<td>
+            		<a th:href="@{'exame/' + ${exame.id}}">Visualizar</a>
+            	</td>
+            	<td>
+            		<a th:href="@{'exameupd/' + ${exame.id}}">Editar</a>
+            	</td>
+            	<td> 
+            		<form th:action="@{'examedel/' + ${exame.id}}" method=post>
+            			<input type="submit" value="X">
+            		</form>
+            	</td>
+       		</tr>
+     	</tbody>
+    </table>
+</body>
+</html>

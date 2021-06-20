@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exames App</title>
+</head>
+<body>
+    <form action="#" th:action="@{/exameadd}" method=post th:object="${exame}">
+    	Nome: <input type="text" th:field="*{nome}"><br><br>
+    	Paciente: <input type="text" th:field="*{paciente}"><br><br>
+    	Data: <input type="text" th:field="*{data}">
+    	Resultado: <input type="text" th:field="*{resultado}">
+    	<input type="submit" value="Inserir">
+    </form>
+</body>
+</html>
