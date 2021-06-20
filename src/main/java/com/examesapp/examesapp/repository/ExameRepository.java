@@ -31,7 +31,7 @@ public class ExameRepository {
 		Object[] obj = new Object[4];
 		obj[0] = exame.getNome();
 		obj[1] = exame.getPaciente();
-		obj[2] = exame.getDataExame();
+		obj[2] = exame.getData();
 		obj[3] = exame.getResultado();
 		jdbc.update(sql, obj);
 	}
@@ -54,7 +54,7 @@ public class ExameRepository {
 		Object[] obj = new Object[5];
 		obj[0] = exame.getNome();
 		obj[1] = exame.getPaciente();
-		obj[2] = exame.getDataExame();
+		obj[2] = exame.getData();
 		obj[3] = exame.getResultado();
 		obj[4] = id;
 		jdbc.update(sql, obj);		

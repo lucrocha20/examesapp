@@ -28,11 +28,25 @@ public class ExameController {
 		return "listaexames";
 	}
 	
+	// Visualizar Exame
+	@GetMapping("/exame/{id}")
+	public String formExame(@PathVariable("id") int id, Model model) {
+		ExameService es = context.getBean(ExameService.class);
+		Map<String, Object> old = es.pegarExame(id);
+		Exame exame = new Exame((String) old.get("nome"),
+								(String) old.get("paciente"),
+								(String) old.get("data"),
+								(String) old.get("resultado"));
+		model.addAttribute("old", exame);
+		model.addAttribute("id", id);
+		return "formexame";
+	}
+	
 	// Adicionar novo Exame
 	@GetMapping("/exameadd")
 	public String formExameAdd(Model model) {
 		model.addAttribute("exame", new Exame());
-		return "formexame";
+		return "formexameadd";
 	}
 	
 	@PostMapping("/exameadd")
@@ -64,6 +78,7 @@ public class ExameController {
 	}
 	
 	// Deletar Exame
+	@PostMapping("/examedel/{id}")
 	public String deletarExame(@PathVariable("id") int id) {
 		ExameService es = context.getBean(ExameService.class);
 		es.deletarExame(id);

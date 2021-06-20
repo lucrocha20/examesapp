@@ -4,25 +4,25 @@ public class Exame {
 	private int id;
 	private String nome;
 	private String paciente;
-	private String dataExame;
+	private String data;
 	private String resultado;
 	
 	public Exame() { }
 
-	public Exame(int id, String nome, String paciente, String dataExame, String resultado) {
+	public Exame(int id, String nome, String paciente, String data, String resultado) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.paciente = paciente;
-		this.dataExame = dataExame;
+		this.data = data;
 		this.resultado = resultado;
 	}
 
-	public Exame(String nome, String paciente, String dataExame, String resultado) {
+	public Exame(String nome, String paciente, String data, String resultado) {
 		super();
 		this.nome = nome;
 		this.paciente = paciente;
-		this.dataExame = dataExame;
+		this.data = data;
 		this.resultado = resultado;
 	}
 
@@ -50,12 +50,12 @@ public class Exame {
 		this.paciente = paciente;
 	}
 
-	public String getDataExame() {
-		return dataExame;
+	public String getData() {
+		return data;
 	}
 
-	public void setDataExame(String dataExame) {
-		this.dataExame = dataExame;
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	public String getResultado() {
@@ -68,7 +68,7 @@ public class Exame {
 
 	@Override
 	public String toString() {
-		return "Exame [id=" + id + ", nome=" + nome + ", paciente=" + paciente + ", dataExame=" + dataExame
+		return "Exame [id=" + id + ", nome=" + nome + ", paciente=" + paciente + ", dataExame=" + data
 				+ ", resultado=" + resultado + "]";
 	}
 	
