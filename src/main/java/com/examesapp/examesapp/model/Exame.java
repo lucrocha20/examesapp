@@ -18,6 +18,14 @@ public class Exame {
 		this.resultado = resultado;
 	}
 
+	public Exame(String nome, String paciente, String dataExame, String resultado) {
+		super();
+		this.nome = nome;
+		this.paciente = paciente;
+		this.dataExame = dataExame;
+		this.resultado = resultado;
+	}
+
 	public int getId() {
 		return id;
 	}
