@@ -19,7 +19,6 @@
             	<td>RESULTADO</td>
             	<td></td>
             	<td></td>
-            	<td></td>
         	</tr>
     	</thead>
     	<tbody>
@@ -29,9 +28,6 @@
             	<td th:text="${exame.paciente}"></td>
             	<td th:text="${exame.data}"></td>
             	<td th:text="${exame.resultado}"></td>
-            	<td>
-            		<a th:href="@{'exame/' + ${exame.id}}">Visualizar</a>
-            	</td>
             	<td>
             		<a th:href="@{'exameupd/' + ${exame.id}}">Editar</a>
             	</td>
