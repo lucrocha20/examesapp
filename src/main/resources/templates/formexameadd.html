@@ -9,11 +9,15 @@
 </head>
 <body>
     <form action="#" th:action="@{/exameadd}" method=post th:object="${exame}">
-    	Nome: <input type="text" th:field="*{nome}"><br><br>
-    	Paciente: <input type="text" th:field="*{paciente}"><br><br>
-    	Data: <input type="text" th:field="*{data}">
-    	Resultado: <input type="text" th:field="*{resultado}">
-    	<input type="submit" value="Inserir">
+    	<label for="nome">Nome</label>
+    	<input type="text" name="nome" th:field="*{nome}" required>
+    	<label for="paciente">Paciente</label>
+    	<input type="text" name="paciente" th:field="*{paciente}" required>
+    	<label for="data">Data</label>
+    	<input type="date" name="date" pattern="\d{4}-\d{2}-\d{2}" th:field="*{data}" required>
+    	<label for="resultado">Resultado</label>
+    	<input type="text" name="resultado" th:field="*{resultado}">
+    	<button type="submit">Inserir</button>
     </form>
 </body>
 </html>
